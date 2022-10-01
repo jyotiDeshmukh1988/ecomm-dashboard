@@ -1,5 +1,5 @@
-const Contact = () => {
-    return <h1>Contact Me</h1>;
+const AddProduct = () => {
+    return <h1>Add Product</h1>;
   };
   
-  export default Contact;
+  export default AddProduct;
