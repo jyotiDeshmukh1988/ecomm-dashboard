@@ -1,5 +1,11 @@
+import Header from "./Header";
+
 const Blogs = () => {
-    return <h1>Blog Articles</h1>;
+    return (
+    <>
+      <Header/>
+      <h1>Blog Articles</h1>
+    </>)
   };
   
   export default Blogs;

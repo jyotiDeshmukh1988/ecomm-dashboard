@@ -7,6 +7,7 @@ import AddProduct from "./components/AddProduct";
 import NoPage from "./components/NoPage";
 import Login from './components/Login';
 import Register from './components/Register';
+import Protected from './components/Protected';
 function App() {
   return (
     <BrowserRouter>
@@ -15,8 +16,10 @@ function App() {
           <Route index element={<Home />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
-          <Route path="updateproduct" element={<UpdateProduct />} />
-          <Route path="addproduct" element={<AddProduct />} />
+          <Route element={<Protected/>}>
+            <Route path="updateproduct" element={<UpdateProduct />} />
+            <Route path="addproduct" element={<AddProduct />} />
+          </Route>
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

@@ -1,7 +1,13 @@
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
+import Header from './Header';
 const Register = () =>{
     const navigate = useNavigate();
+    useEffect(()=>{
+        if(localStorage.getItem('mytoken')){
+            navigate('/addproduct');
+        }
+    },[]);
     const [name,setName] = useState("");
     const [password,setPassword] = useState("");
     const [email,setEmail] = useState("");
@@ -23,6 +29,7 @@ const Register = () =>{
     }
     return(
         <>
+        <Header/>
         <div className='col-sm-6 offset-sm-3 mt-5'>
             <h1>User SignUp</h1><br/>
             <label>Enter Username</label>
